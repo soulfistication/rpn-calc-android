@@ -105,6 +105,9 @@ fun CalculatorScreen(calc: RpnCalculatorViewModel) {
             verticalArrangement = Arrangement.spacedBy(10.dp)
         ) {
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
+                FunctionKey("±", Modifier.weight(1f), height = 52.dp) { calc.pressChangeSign() }
+            }
+            Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                 FunctionKey("CLX", Modifier.weight(1f)) { calc.clearX() }
                 FunctionKey("DROP", Modifier.weight(1f)) { calc.dropX() }
                 FunctionKey("SWAP", Modifier.weight(1f)) { calc.swapXY() }
@@ -125,7 +128,6 @@ fun CalculatorScreen(calc: RpnCalculatorViewModel) {
                 DigitKey("4", Modifier.weight(1f)) { calc.pressDigit("4") }
                 DigitKey("5", Modifier.weight(1f)) { calc.pressDigit("5") }
                 DigitKey("6", Modifier.weight(1f)) { calc.pressDigit("6") }
-                FunctionKey("±", Modifier.weight(1f), height = 52.dp) { calc.pressChangeSign() }
             }
             Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.spacedBy(10.dp)) {
                 DigitKey("1", Modifier.weight(1f)) { calc.pressDigit("1") }
